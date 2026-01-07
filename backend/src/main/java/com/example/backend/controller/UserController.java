@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/users")
 public class UserController {
 
@@ -35,6 +35,7 @@ public class UserController {
         User existing = repository.findById(id).orElseThrow();
         existing.setName(user.getName());
         existing.setEmail(user.getEmail());
+        existing.setDevName(user.getDevName());
         return repository.save(existing);
     }
 

@@ -13,6 +13,8 @@ public class User {
 
     private String name;
     private String email;
+    private Stirng devName;
+
 
     public User() {}
 
@@ -29,5 +31,8 @@ public class User {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public String getDevName() {return devName;}
+    public void setDevName(Stirng devName) { this.devName = devName; }
 }
 
