@@ -1,10 +1,25 @@
-body {
+/* body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #1e1e1e;
 }
 
 .app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #1e1e1e;
+  color: #fff;
+}
+
+.auth-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,0 +1,56 @@
+.auth-form {
+  background: #2c2c2c;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form input {
+  width: 92%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #27ae60;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+}
+
+.auth-form button:hover {
+  background: #2ecc71;
+}
+
+.auth-form .link {
+  color: #3498db;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.company-name {
+  text-align: center;
+  color: lab(67% 25.41 72.37); 
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
