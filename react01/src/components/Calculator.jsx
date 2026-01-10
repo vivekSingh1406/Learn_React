@@ -12,7 +12,7 @@ function Calculator() {
     try {
       setInput(eval(input).toString())
     } catch {
-      setInput("Error")
+      setInput("Insert Value")
     }
   }
 
