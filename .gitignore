@@ -60,7 +60,11 @@ dist-ssr
 *.sw?
 
 ### Project folders ###
-/backend/
+/backend/.idea/
+/backend/.DS_Store
+/backend/.mvn
+
+
 /crud-operation/
 
 ### Maven / build ###
@@ -72,9 +76,5 @@ dist-ssr
 ./DS_Store
 ./.DS_Store
 .DS_Store
-.DS_Store?
 __MACOSX
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/ 
+*.DS_Store 
