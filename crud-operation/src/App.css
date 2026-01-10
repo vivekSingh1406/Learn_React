@@ -1,86 +1,9 @@
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-}
-
-/* Center the .app div */
 body {
+  margin: 0;
+  min-height: 100vh;
   display: flex;
-  justify-content: center; 
-  align-items: center;  
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6f8;
 }
 
-.app {
-  width: 700px;          
-  background-color: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.user-form {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.user-form input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.user-form button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #4caf50;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.user-form button:hover {
-  background-color: #45a049;
-}
-
-.user-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.user-table th,
-.user-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.user-table button {
-  margin-right: 5px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.user-table button:hover {
-  opacity: 0.8;
-}
-
-.user-table button:first-child {
-  background-color: #2196f3;
-  color: white;
-}
-
-.user-table button:last-child {
-  background-color: #f44336;
-  color: white;
-}

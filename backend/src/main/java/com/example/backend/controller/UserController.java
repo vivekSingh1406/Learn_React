@@ -1,47 +1,41 @@
 package com.example.backend.controller;
 
-
-
-
 import com.example.backend.entity.User;
-import com.example.backend.repository.UserRepository;
+import com.example.backend.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/users")
 public class UserController {
 
-    private final UserRepository repository;
+    @Autowired
+    private UserService userService;
 
-    public UserController(UserRepository repository) {
-        this.repository = repository;
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        return userService.createUser(user);
+    }
+
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable Long id) {
+        return userService.getUserById(id);
     }
 
     @GetMapping
     public List<User> getAllUsers() {
-        return repository.findAll();
-    }
-
-    @PostMapping
-    public User createUser(@RequestBody User user) {
-        return repository.save(user);
+        return userService.getAllUsers();
     }
 
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
-        User existing = repository.findById(id).orElseThrow();
-        existing.setName(user.getName());
-        existing.setEmail(user.getEmail());
-        existing.setDevName(user.getDevName());
-        return repository.save(existing);
+        return userService.updateUser(id, user);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Long id) {
-        repository.deleteById(id);
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return "User deleted successfully";
     }
 }
-

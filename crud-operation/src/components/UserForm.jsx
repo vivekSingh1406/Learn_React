@@ -1,56 +1,50 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function UserForm({ addOrUpdate, editUser }) {
+function UserForm({ addUser, editUser, updateUser }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [devTeam, setDevTeam] = useState("");
 
   useEffect(() => {
     if (editUser) {
-      setName(editUser.name || "");
-      setEmail(editUser.email || "");
-      setDevTeam(editUser.dev || "");
+      setName(editUser.name);
+      setEmail(editUser.email);
     }
   }, [editUser]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !email || !devTeam) return alert("Please fill all fields!");
 
-    addOrUpdate({
-      id: editUser ? editUser.id : null,
-      name,
-      email,
-      dev: devTeam,
-    });
+    if (!name || !email) return;
 
-    // Reset form
+    if (editUser) {
+      updateUser({ ...editUser, name, email });
+    } else {
+      addUser({ name, email });
+    }
+
     setName("");
     setEmail("");
-    setDevTeam("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="user-form">
+    <form className="form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
+
       <input
         type="email"
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Team"
-        value={devTeam}
-        onChange={(e) => setDevTeam(e.target.value)}
-      />
-      <button type="submit">{editUser ? "Update" : "Add"} User</button>
+
+      <button type="submit">
+        {editUser ? "Update User" : "Add User"}
+      </button>
     </form>
   );
 }

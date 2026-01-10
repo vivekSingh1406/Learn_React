@@ -1,38 +1,43 @@
 package com.example.backend.entity;
 
-
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.*;
+import org.hibernate.annotations.processing.Pattern;
+
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "users")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "users", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "email"),
+        @UniqueConstraint(columnNames = "mobile")
+})
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
-    private String name;
+    @NotBlank(message = "Full name is required")
+    private String fullName;
+
+    @Email(message = "Invalid email format")
+    @NotBlank(message = "Email is required")
     private String email;
-    private Stirng devName;
 
+    @NotBlank(message = "Mobile number is required")
+//    @Pattern(regexp = "\\d{10}", message = "Mobile must be 10 digits")
+    private String mobile;
 
-    public User() {}
+    @NotBlank(message = "Password is required")
+    private String password;
 
-    public User(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
+    @NotBlank(message = "Role is required")
+//    @Pattern(regexp = "Admin|Instructor|Student", message = "Role must be Admin, Instructor or Student")
+    private String role;
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public String getDevName() {return devName;}
-    public void setDevName(Stirng devName) { this.devName = devName; }
+    private LocalDateTime dateRegistered = LocalDateTime.now();
 }
-
