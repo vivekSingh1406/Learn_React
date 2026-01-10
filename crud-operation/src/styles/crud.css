@@ -1,0 +1,68 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6f8;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form input {
+  flex: 1;
+  padding: 8px;
+}
+
+.form button {
+  padding: 8px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+button.edit {
+  background: #ffc107;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+}
+
+button.delete {
+  background: #dc3545;
+  border: none;
+  padding: 5px 10px;
+  color: white;
+}
+
+.empty {
+  padding: 20px;
+}
