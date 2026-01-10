@@ -62,3 +62,19 @@ dist-ssr
 ### Project folders ###
 /backend/
 /crud-operation/
+
+### Maven / build ###
+# Ignore the local .mvn wrapper directory
+/.mvn/
+# Ignore any "target" directories under backend modules
+/backend/**/target/
+/backend/target/
+./DS_Store
+./.DS_Store
+.DS_Store
+.DS_Store?
+__MACOSX
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/ 
