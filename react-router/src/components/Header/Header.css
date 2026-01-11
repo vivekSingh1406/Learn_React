@@ -1,0 +1,30 @@
+.header {
+  width: 100vw;
+  background-color: #0a2540;
+}
+
+/* Inner container to align content */
+.header-container {
+  max-width: 1200px;
+  height: 64px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-left: 24px;
+  text-decoration: none;
+}
+
+nav a.active {
+  border-bottom: 2px solid #00d4ff;
+}

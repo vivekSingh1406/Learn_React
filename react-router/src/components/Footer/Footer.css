@@ -1,0 +1,12 @@
+.footer {
+  width: 100vw;
+  background-color: #0a2540;
+  color: #cbd5e1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  text-align: center;
+}
